@@ -45,7 +45,8 @@ void OnCollisionEnter2D(Collision2D collision)
     // Eğer platforma temas ettiğinde ve zıplama tuşuna basıldığında onfloor değişkenini tekrar false yapabilirsiniz.
      else if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && onfloor==true)
     {
-
+         rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        onfloor = false;
     }
 }
 
