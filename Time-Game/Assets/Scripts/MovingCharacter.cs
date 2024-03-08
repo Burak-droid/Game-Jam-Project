@@ -13,7 +13,7 @@ public class MovingCharacter : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         float yatayHareket = Input.GetAxis("Horizontal");
@@ -37,7 +37,7 @@ public class MovingCharacter : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("checktime"))
         {
             onfloor = true;
         }
