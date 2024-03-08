@@ -10,9 +10,13 @@ public class MovingCharacter : MonoBehaviour
     public bool movingCharacterright = false;
     public bool movingCharacterleft = false;
     Rigidbody2D rb;
+    private float chScaleX, chScaleY, chScaleZ;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        chScaleX = transform.localScale.x;
+        chScaleY = transform.localScale.y;
+        chScaleZ = transform.localScale.z;
     }
 
    
@@ -25,12 +29,12 @@ public class MovingCharacter : MonoBehaviour
     rb.velocity = new Vector2(hareket.x * movingSpeed, rb.velocity.y);
     if (yatayHareket > 0)
     {
-        transform.localScale = new Vector3(1, 1, 1);
+        transform.localScale = new Vector3(chScaleX, chScaleY, chScaleZ);
             movingCharacterright = true;
     }
     else if (yatayHareket < 0)
     {
-        transform.localScale = new Vector3(-1, 1, 1);
+        transform.localScale = new Vector3(-chScaleX, chScaleY, chScaleZ);
             movingCharacterleft = true;
     }
     else { movingCharacterright = false;
