@@ -14,14 +14,14 @@ public class MovingCharacter : MonoBehaviour
     GameObject tempBullet;
     public GameObject bullet;
     private float chScaleX, chScaleY, chScaleZ;
-    public Transform muzzle;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         chScaleX = transform.localScale.x;
         chScaleY = transform.localScale.y;
         chScaleZ = transform.localScale.z;
-        muzzle = transform.GetChild(0);
+
     }
 
    
@@ -36,15 +36,21 @@ public class MovingCharacter : MonoBehaviour
     {
         transform.localScale = new Vector3(chScaleX, chScaleY, chScaleZ);
             movingCharacterright = true;
+            movingCharacterleft = false;
+
     }
     else if (yatayHareket < 0)
     {
         transform.localScale = new Vector3(-chScaleX, chScaleY, chScaleZ);
             movingCharacterleft = true;
+            movingCharacterright = false;
     }
     else { movingCharacterright = false;
             movingCharacterleft = false;
+            movingCharacterright = false;
         }
+        animator.SetBool("IsMovingRight", movingCharacterright);
+        animator.SetBool("IsMovingLeft", movingCharacterleft);
     if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && onfloor)
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpPower);
