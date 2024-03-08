@@ -477,6 +477,8 @@ MonoBehaviour:
   movingSpeed: 5
   jumpPower: 10
   onfloor: 1
+  movingCharacterright: 0
+  movingCharacterleft: 0
 --- !u!1001 &7927186299669777300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -525,12 +527,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3142970731146770466, guid: a32a174551750c64cba15b990f874dc3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.696
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142970731146770466, guid: a32a174551750c64cba15b990f874dc3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211709222503588161, guid: a32a174551750c64cba15b990f874dc3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8504485
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211709222503588161, guid: a32a174551750c64cba15b990f874dc3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211709222503588161, guid: a32a174551750c64cba15b990f874dc3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.02
+      objectReference: {fileID: 0}
     - target: {fileID: 8021585881793742566, guid: a32a174551750c64cba15b990f874dc3, type: 3}
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8681292474011500356, guid: a32a174551750c64cba15b990f874dc3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a32a174551750c64cba15b990f874dc3, type: 3}
