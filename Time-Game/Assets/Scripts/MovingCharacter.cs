@@ -5,18 +5,23 @@ using UnityEngine;
 public class MovingCharacter : MonoBehaviour
 {
     public float movingSpeed = 5f;
+    public float bulletSpeed;
     public float jumpPower = 10f;
     public bool onfloor = true;
     public bool movingCharacterright = false;
     public bool movingCharacterleft = false;
     Rigidbody2D rb;
+    GameObject tempBullet;
+    public GameObject bullet;
     private float chScaleX, chScaleY, chScaleZ;
+    public Transform muzzle;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         chScaleX = transform.localScale.x;
         chScaleY = transform.localScale.y;
         chScaleZ = transform.localScale.z;
+        muzzle = transform.GetChild(0);
     }
 
    
@@ -45,6 +50,10 @@ public class MovingCharacter : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         onfloor = false;
     }
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+            ShootBullet();
+    }
 }
 
 void OnCollisionEnter2D(Collision2D collision)
@@ -60,5 +69,9 @@ void OnCollisionEnter2D(Collision2D collision)
         onfloor = false;
     }
 }
-
+    void ShootBullet()
+    {
+        tempBullet = Instantiate(bullet, muzzle.position, Quaternion.identity) as GameObject; // muzun dönmesi içim rotation ayarı yapılacak
+        tempBullet.GetComponent<Rigidbody2D>().AddForce(muzzle.forward * bulletSpeed);
+    }
 }
