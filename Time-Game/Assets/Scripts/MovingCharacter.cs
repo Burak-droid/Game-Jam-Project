@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class MovingCharacter : MonoBehaviour
@@ -7,10 +8,11 @@ public class MovingCharacter : MonoBehaviour
     public float movingSpeed = 5f;
     public float jumpPower = 10f;
     public bool onfloor = true;
-    public bool movingCharacterright = false;
-    public bool movingCharacterleft = false;
     Rigidbody2D rb;
     private float chScaleX, chScaleY, chScaleZ;
+
+    Transform firepoint;
+
 
     private Animator anim;
     void Start()
@@ -20,6 +22,7 @@ public class MovingCharacter : MonoBehaviour
         chScaleY = transform.localScale.y;
         chScaleZ = transform.localScale.z;
         anim = GetComponent<Animator>();
+        firepoint = transform.GetChild(0);
     }
 
    
@@ -32,22 +35,23 @@ public class MovingCharacter : MonoBehaviour
     rb.velocity = new Vector2(hareket.x * movingSpeed, rb.velocity.y);
     if (yatayHareket > 0)
     {
-        transform.localScale = new Vector3(chScaleX, chScaleY, chScaleZ);
-            movingCharacterright = true;
-            movingCharacterleft = false;
+            transform.localScale = new Vector3(chScaleX, chScaleY, chScaleZ);
+
+            firepoint.localScale = new Vector2(yatayHareket,0f);
             anim.SetBool("running",true);
+        
+            
     }
     else if (yatayHareket < 0)
     {
-        transform.localScale = new Vector3(-chScaleX, chScaleY, chScaleZ);
-            movingCharacterleft = true;
-            movingCharacterright = false;
+            transform.localScale = new Vector3(-chScaleX, chScaleY, chScaleZ);
+            firepoint.localScale = new Vector2(yatayHareket,-0f);
             anim.SetBool("running",true);
+        
+            
     }
-    else { movingCharacterright = false;
-            movingCharacterleft = false;
-            movingCharacterright = false;
-             anim.SetBool("running",false);
+    else { 
+            anim.SetBool("running",false);
         }
     if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && onfloor)
     {
@@ -69,5 +73,8 @@ void OnCollisionEnter2D(Collision2D collision)
         onfloor = false;
     }
 }
+
+
+
 
 }
