@@ -8,11 +8,17 @@ public class snowball : MonoBehaviour
     public float speed = 20f;
     public int damage = 40;
     public Rigidbody2D rb;
-    void Start()
+    private bool facingRight = true; // Karakterin varsayılan olarak sağa baktığını varsayalım
+
+    void Update()
     {
         rb.velocity = transform.right*speed;
-    }
+    
+    if(!facingRight){
 
+        rb.velocity = transform.right*speed;
+    }
+}
      void OnTriggerEnter2D(Collider2D hitInfo) {
 
        Enemy enemy= hitInfo.GetComponent<Enemy>();

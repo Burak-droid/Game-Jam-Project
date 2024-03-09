@@ -16,7 +16,6 @@ public class Weapon : MonoBehaviour
     }
 
     void Shoot(){ 
-        //shhoting logic
         Instantiate(snowballPrefab, firePoint.position, firePoint.rotation);
     }
 }
