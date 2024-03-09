@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Moving Platform
   - border
+  - cave
   layers:
   - Default
   - TransparentFX

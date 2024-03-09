@@ -8,7 +8,7 @@ public class AnanasSpawner : MonoBehaviour
     public Transform Flower;
     public float shootInterval = 2.25f;
     private float shootTimer = 0f;
-    public float destroyInterval = 4.5f;
+    public float destroyInterval = 0.75f;
     private float destroyTimer = 0f;
 
     void Update()
@@ -40,7 +40,7 @@ public class AnanasSpawner : MonoBehaviour
         if (rb != null)
         {
             
-            rb.AddForce(direction * 200f);
+            rb.AddForce(direction * 300f);
         }
     }
 
