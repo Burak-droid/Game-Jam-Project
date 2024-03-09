@@ -24,9 +24,11 @@ public class Monkeyhealth : MonoBehaviour
             {
                 temasOldu = true;
                 canSayisi--;
+                Debug.Log(canSayisi);
                 if (canSayisi <= 0)
                 {
                     Invoke("YenidenYukle", 1f);
+                    canSayisi = 3;
                 }
             }
         }
@@ -35,6 +37,8 @@ public class Monkeyhealth : MonoBehaviour
     private void YenidenYukle()
     {
         int sahneIndeksi = SceneManager.GetActiveScene().buildIndex;
+        canSayisi = 3;
         SceneManager.LoadScene(sahneIndeksi);
+
     }
 }
