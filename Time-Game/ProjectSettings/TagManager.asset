@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - checktime
+  - Enemy
   layers:
   - Default
   - TransparentFX
