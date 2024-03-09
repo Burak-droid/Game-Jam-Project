@@ -15,7 +15,6 @@ public class snowball : MonoBehaviour
         rb.velocity = transform.right*speed;
     
     if(!facingRight){
-
         rb.velocity = transform.right*speed;
     }
 }
