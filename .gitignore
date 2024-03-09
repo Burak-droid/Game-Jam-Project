@@ -2,3 +2,7 @@
 Time-Game/.vscode/extensions.json
 Time-Game/.vscode/launch.json
 Time-Game/.vscode/settings.json
+#Ignore all .meta file
+*.meta
+#But not source file with postfix. which is everything but a folder
+!*.*.meta
