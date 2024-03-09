@@ -1271,23 +1271,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1151843786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151843781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c77d73b0aea26da44afb32e864bfb433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingSpeed: 5
-  jumpPower: 10
-  onfloor: 1
-  movingCharacterright: 0
-  movingCharacterleft: 0
 --- !u!50 &1151843787
 Rigidbody2D:
   serializedVersion: 4
@@ -1315,6 +1298,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1151843788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151843781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc5f47c70078bf458e696d2ebc28089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingSpeed: 5
+  jumpPower: 10
+  onfloor: 1
 --- !u!1 &1933125105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,8 +1475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e884d502358f74748ab30db7345c2e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.04
-  backgroundRenderer: {fileID: 1951606048}
 --- !u!64 &1951606047
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1620,11 +1616,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8542056978441973711, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.097
+      value: -19.078
       objectReference: {fileID: 0}
     - target: {fileID: 8542056978441973711, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.01
+      value: 7.345
       objectReference: {fileID: 0}
     - target: {fileID: 8542056978441973711, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1664,10 +1660,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3854007336810426040, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1151843785}
+      addedObject: {fileID: 1151843788}
     - targetCorrespondingSourceObject: {fileID: 3854007336810426040, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1151843786}
+      addedObject: {fileID: 1151843785}
     - targetCorrespondingSourceObject: {fileID: 3854007336810426040, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1151843787}
