@@ -30,12 +30,20 @@ public class AnanasSpawner : MonoBehaviour
     void Shoot()
     {
         GameObject Go = Instantiate(enemy, Flower.position, Quaternion.identity);
-        Rigidbody2D rb = Go.GetComponent<Rigidbody2D>(); 
+        Rigidbody2D rb = Go.GetComponent<Rigidbody2D>();
+
+       
+        Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position; 
+        Vector2 direction = (playerPosition - Go.transform.position).normalized;
+
+        
         if (rb != null)
         {
-            rb.AddForce(Vector2.right * 300f);
+            
+            rb.AddForce(direction * 300f);
         }
     }
+
     void DestroyEnemy()
     {
 
