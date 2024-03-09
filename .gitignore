@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Time-Game/.vscode/launch.json
 Time-Game/.vscode/settings.json
+Time-Game/.vscode/extensions.json
