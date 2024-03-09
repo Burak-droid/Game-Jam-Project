@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Conveyour : MonoBehaviour
 {
-    public float speed;
-    Rigidbody2D rb;
+    public float conveyourSpeed = 2f;
+    Vector2 speed;
+    
     private void Start() {
-        rb = GetComponent<Rigidbody2D>();  
+        speed = new Vector2(conveyourSpeed, 0f);
     }
-    void FixedUpdate() {
-        Vector2 pos = rb.position;
-        rb.position += Vector2.left * speed * Time.fixedDeltaTime;
-        rb.MovePosition(pos);
+    private void OnCollisionStay2D(Collision2D other) {
+        
+        if (other.gameObject.CompareTag("Player")){
+            other.rigidbody.AddForce(speed);
+            Debug.Log("123");
+        }
     }
 }
