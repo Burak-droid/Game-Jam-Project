@@ -12,4 +12,8 @@ public class snowball : MonoBehaviour
         rb.velocity = transform.right*speed;
     }
 
+     void OnTriggerEnter() {
+        Debug.Log("destroyed");
+        Destroy(gameObject);
+    }
 }

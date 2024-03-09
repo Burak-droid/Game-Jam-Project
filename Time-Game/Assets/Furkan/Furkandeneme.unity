@@ -6254,7 +6254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d479657372efda49b73bf6c7771dcc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 314123528}
   snowballPrefab: {fileID: 1299389698797883158, guid: d9159528c88506d4193eed130f04e03c, type: 3}
 --- !u!1 &1785429932
 GameObject:
