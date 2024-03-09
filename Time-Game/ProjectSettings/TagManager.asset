@@ -7,6 +7,8 @@ TagManager:
   - Platform
   - checktime
   - Enemy
+  - Moving Platform
+  - border
   layers:
   - Default
   - TransparentFX
