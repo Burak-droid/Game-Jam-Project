@@ -8,31 +8,27 @@ public class Monkeyhealth : MonoBehaviour
 {
     private float canSayisi = 5;
     public Slider healthSlider;
-    private bool firstStart = true; 
+    private bool dialogShown = false;
 
     void Start()
     {
         healthSlider.maxValue = canSayisi;
         healthSlider.value = canSayisi;
-        if (firstStart)
+        if (!PlayerPrefs.HasKey("DialogShown"))
         {
-            
-            GameObject dialogPanel = GameObject.FindGameObjectWithTag("DialogPanel");
-            if (dialogPanel != null)
-            {
-                dialogPanel.GetComponent<Dialog>().ResetDialogue();
-                dialogPanel.SetActive(true);
-            }
-            firstStart = false; 
+            ShowDialog();
+            PlayerPrefs.SetInt("DialogShown", 1);
         }
-        else
+    }
+
+    private void ShowDialog()
+    {
+        GameObject dialogPanel = GameObject.FindGameObjectWithTag("DialogPanel");
+        if (dialogPanel != null && !dialogShown)
         {
-            
-            GameObject dialogPanel = GameObject.FindGameObjectWithTag("DialogPanel");
-            if (dialogPanel != null)
-            {
-                dialogPanel.SetActive(false);
-            }
+            dialogPanel.GetComponent<Dialog>().ResetDialogue();
+            dialogPanel.SetActive(true);
+            dialogShown = true;
         }
     }
 
@@ -69,5 +65,10 @@ public class Monkeyhealth : MonoBehaviour
         healthSlider.value = canSayisi;
         Debug.Log(canSayisi + "  2");
         SceneManager.LoadScene(sahneIndeksi);
+        PlayerPrefs.DeleteKey("DialogShown"); // Reset the PlayerPrefs key
     }
+
+    // Bu kod, karakter öldüğünde diyalog balonlarını kapatır
+
+
 }
