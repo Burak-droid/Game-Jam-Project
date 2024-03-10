@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    AudioSource audio; 
     public GameObject pointA;
 
     public GameObject pointB;
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         currentPoint = pointB.transform;
         anim.SetBool("isrunning",true);
+        audio = GetComponent<AudioSource>();
     }
 
    void Update(){
@@ -67,8 +69,10 @@ public class Enemy : MonoBehaviour
         isDead = true;
         anim.SetBool("isrunning", false);
         anim.SetTrigger("death");
+        audio.Play();
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
+        
     }
 
 }
