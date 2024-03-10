@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Kız : MonoBehaviour
 {
@@ -49,6 +50,7 @@ public class Kız : MonoBehaviour
             transform.Translate(new Vector2(0f, -1f) * Time.deltaTime * fallSpeed);
             alternatifSon.SetActive(true);
         }
+    
         if (transform.position.x >= Hava){
             OnAir = true;
         }
