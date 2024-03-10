@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Cavechecksc : MonoBehaviour
+public class buraktünel : MonoBehaviour
 {
 
     void OnTriggerEnter2D(Collider2D other)
@@ -19,7 +19,7 @@ public class Cavechecksc : MonoBehaviour
     
     void OyunuDurdur()
     {
-       SceneManager.LoadSceneAsync("Furkandeneme");
+       SceneManager.LoadSceneAsync("ending");
     }
 
 }
