@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8497681106601805311}
   - component: {fileID: 5773647708150948553}
   - component: {fileID: 431440331094234764}
+  - component: {fileID: 7674292146667242545}
+  - component: {fileID: -618539293041565764}
   m_Layer: 0
   m_Name: lava_rock
   m_TagString: Enemy
@@ -160,13 +162,81 @@ PolygonCollider2D:
     - - {x: 0.0899118, y: 0.084216364}
       - {x: -0.015866164, y: 0.09967381}
       - {x: -0.081346124, y: 0.06843306}
+      - {x: -0.032537296, y: 0.08567834}
       - {x: -0.016645, y: 0.09434867}
-      - {x: -0.14, y: 0.04}
-      - {x: -0.12278193, y: 0.012913936}
-      - {x: -0.12134613, y: -0.05421669}
-      - {x: -0.059911802, y: -0.061302982}
+      - {x: -0.032796033, y: 0.0977478}
+      - {x: -0.064675294, y: 0.08095336}
+      - {x: -0.09726045, y: 0.065520324}
+      - {x: -0.12664422, y: 0.028706074}
+      - {x: -0.12689185, y: 0.011023753}
+      - {x: -0.12792069, y: -0.054216452}
+      - {x: -0.08207032, y: -0.0678432}
+      - {x: -0.056624528, y: -0.067919336}
+      - {x: -0.02133038, y: -0.07245135}
       - {x: 0.052803468, y: -0.061302587}
-      - {x: 0.10847748, y: -0.064172596}
+      - {x: 0.120807245, y: -0.060391754}
       - {x: 0.11273763, y: -0.02690991}
+      - {x: 0.123735934, y: 0.02335143}
+      - {x: 0.12087822, y: 0.06484151}
       - {x: 0.10412914, y: 0.06991212}
   m_UseDelaunayMesh: 0
+--- !u!61 &7674292146667242545
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566949839424110946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0030297786, y: 0.013269305}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2564306, y: 0.17670321}
+  m_EdgeRadius: 0
+--- !u!114 &-618539293041565764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566949839424110946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d71b17ac03b83489584432acaa2057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformTag: Platform
+  borderTag: Border
+  playerTag: Player

@@ -10,6 +10,7 @@ TagManager:
   - Moving Platform
   - border
   - cave
+  - banana
   layers:
   - Default
   - TransparentFX

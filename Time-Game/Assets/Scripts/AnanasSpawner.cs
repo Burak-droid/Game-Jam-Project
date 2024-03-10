@@ -6,26 +6,20 @@ public class AnanasSpawner : MonoBehaviour
 {
     public GameObject enemy;
     public Transform Flower;
-    public float shootInterval = 2.25f;
+    public float shootInterval = 2.5f;
     private float shootTimer = 0f;
-    public float destroyInterval = 0.75f;
-    private float destroyTimer = 0f;
-
+    
     void Update()
     {
         shootTimer += Time.deltaTime;
-        destroyTimer += Time.deltaTime; 
+        
 
         if (shootTimer >= shootInterval)
         {
             Shoot();
             shootTimer = 0f;
         }
-        if (destroyTimer >= destroyInterval)
-        {
-            DestroyEnemy();
-            destroyTimer = 0f;
-        }
+        
     }
     void Shoot()
     {
