@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public float speed;
     public GameObject deathEffect;
+    private bool isDead = false;
+
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour
    void Update(){
           
             Vector2 point = currentPoint.position - transform.position;
+
             if(currentPoint == pointB.transform){ 
                 rb.velocity = new Vector2(speed,0);
             }       
@@ -56,12 +59,16 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
-    void Die()
+    IEnumerator Die()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        isDead = true;
+        anim.SetBool("isrunning", false);
+        anim.SetTrigger("death");
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
+
 }
