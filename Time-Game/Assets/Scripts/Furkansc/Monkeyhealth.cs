@@ -23,17 +23,17 @@ public class Monkeyhealth : MonoBehaviour
                 canSayisi = 0;
                 if (canSayisi <= 0)
                 {
-                    Invoke("YenidenYukle", 1f);
+                    Invoke("YenidenYukle", 0.5f);
                 }
             }
             else if (other.gameObject.CompareTag("Enemy"))
             {
                 canSayisi = canSayisi - 0.5f;
-                healthSlider.value = canSayisi; // Sağlık çubuğunu güncelle
+                healthSlider.value = canSayisi; 
                 Debug.Log(canSayisi + "  1");
                 if (canSayisi <= 0)
                 {
-                    Invoke("YenidenYukle", 1f);
+                    Invoke("YenidenYukle", 0.5f);
                     canSayisi = 5;
                 }
             }
@@ -44,7 +44,7 @@ public class Monkeyhealth : MonoBehaviour
     {
         int sahneIndeksi = SceneManager.GetActiveScene().buildIndex;
         canSayisi = 5;
-        healthSlider.value = canSayisi; // Sağlık çubuğunu başlangıç değerine geri döndür
+        healthSlider.value = canSayisi;
         Debug.Log(canSayisi + "  2");
         SceneManager.LoadScene(sahneIndeksi);
     }
