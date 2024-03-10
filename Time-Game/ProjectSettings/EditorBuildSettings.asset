@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Vicirdek/Ending.unity
     guid: 9fb16536797048b4e9fffac4484355d6
+  - enabled: 1
+    path: Assets/Furkan/MutluSon.unity
+    guid: 97e68d1e277c8ae479bff051332555dd
+  - enabled: 1
+    path: Assets/Furkan/FinishGame.unity
+    guid: bfdf131dd2f79e84ca8f783f2528e473
   m_configObjects: {}

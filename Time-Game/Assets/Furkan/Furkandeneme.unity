@@ -293,15 +293,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513794188485756442, guid: 1c6d9b4ede84959468a8eccd308f1722, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.83
+      value: 27.34
       objectReference: {fileID: 0}
     - target: {fileID: 5513794188485756442, guid: 1c6d9b4ede84959468a8eccd308f1722, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.63
+      value: 6.69
       objectReference: {fileID: 0}
     - target: {fileID: 5513794188485756442, guid: 1c6d9b4ede84959468a8eccd308f1722, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.99
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 5513794188485756442, guid: 1c6d9b4ede84959468a8eccd308f1722, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8484,7 +8484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b2445d86c28fc468c3819733cc0f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "durmaS\xFCresi": 1.5
 --- !u!82 &1639428023
 AudioSource:
   m_ObjectHideFlags: 0

@@ -12,14 +12,14 @@ public class Cavechecksc : MonoBehaviour
         if (other.CompareTag("cave"))
         {
            
-            Invoke("OyunuDurdur", 1.5f);
+            Invoke("OyunuDurdur", 1f);
         }
     }
 
     
     void OyunuDurdur()
     {
-       SceneManager.LoadSceneAsync("Furkandeneme");
+       SceneManager.LoadSceneAsync("Ending");
     }
 
 }
