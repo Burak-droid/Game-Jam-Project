@@ -5603,9 +5603,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3791805551373370040, guid: 5de9c1d346b7bee4781f22d284e893b8, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: "5 i 20 ge\xE7iyo, o kadar da geriye g\xF6ndermemi\u015F gerizekal\u0131"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5741050515388485977, guid: 5de9c1d346b7bee4781f22d284e893b8, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7462139520610415860, guid: 5de9c1d346b7bee4781f22d284e893b8, type: 3}
       propertyPath: m_Name
       value: PanelDiaolg
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843717062473727920, guid: 5de9c1d346b7bee4781f22d284e893b8, type: 3}
+      propertyPath: m_fontSize
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843717062473727920, guid: 5de9c1d346b7bee4781f22d284e893b8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
