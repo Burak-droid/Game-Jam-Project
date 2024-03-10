@@ -8,7 +8,7 @@ public class Dialog : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed = 0.02f;
-    public float panelCloseDelay = 2f; // Panelin kapanması için beklenen süre
+    public float panelCloseDelay = 1.5f;
     private int index;
 
     void Start()
@@ -31,12 +31,19 @@ public class Dialog : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
 
-        // Metin tamamlandıktan sonra belirli bir süre sonra ClosePanel fonksiyonunu çağır
         Invoke("ClosePanel", panelCloseDelay);
     }
 
     void ClosePanel()
     {
-        gameObject.SetActive(false); // Paneli devre dışı bırakır
+        gameObject.SetActive(false);
+    }
+
+    public void ResetDialogue()
+    {
+        StopAllCoroutines(); 
+        textComponent.text = string.Empty; 
+        gameObject.SetActive(true); 
+        StartDialogue(); 
     }
 }
