@@ -3,17 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class Monkeyhealth : MonoBehaviour
 {
-
     private float canSayisi = 5;
-    public Slider healthSlider; 
+    public Slider healthSlider;
+    private bool firstStart = true; 
 
     void Start()
     {
-        healthSlider.maxValue = canSayisi; 
-        healthSlider.value = canSayisi; 
+        healthSlider.maxValue = canSayisi;
+        healthSlider.value = canSayisi;
+        if (firstStart)
+        {
+            
+            GameObject dialogPanel = GameObject.FindGameObjectWithTag("DialogPanel");
+            if (dialogPanel != null)
+            {
+                dialogPanel.GetComponent<Dialog>().ResetDialogue();
+                dialogPanel.SetActive(true);
+            }
+            firstStart = false; 
+        }
+        else
+        {
+            
+            GameObject dialogPanel = GameObject.FindGameObjectWithTag("DialogPanel");
+            if (dialogPanel != null)
+            {
+                dialogPanel.SetActive(false);
+            }
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("border"))
@@ -29,7 +51,7 @@ public class Monkeyhealth : MonoBehaviour
             else if (other.gameObject.CompareTag("Enemy"))
             {
                 canSayisi = canSayisi - 0.5f;
-                healthSlider.value = canSayisi; 
+                healthSlider.value = canSayisi;
                 Debug.Log(canSayisi + "  1");
                 if (canSayisi <= 0)
                 {
@@ -48,5 +70,4 @@ public class Monkeyhealth : MonoBehaviour
         Debug.Log(canSayisi + "  2");
         SceneManager.LoadScene(sahneIndeksi);
     }
-
 }
