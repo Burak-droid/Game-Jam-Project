@@ -3,23 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Cavechecksc : MonoBehaviour
+public class SonerPortal : MonoBehaviour
 {
+    // Start is called before the first frame update
+    public float durmaSüresi = 1.5f;
 
+    
     void OnTriggerEnter2D(Collider2D other)
     {
       
         if (other.CompareTag("cave"))
         {
            
-            Invoke("OyunuDurdur", 1.5f);
+        Invoke("SceneLoaders",1f);
+        
         }
     }
 
-    
-    void OyunuDurdur()
-    {
-       SceneManager.LoadSceneAsync("Furkandeneme");
+    void SceneLoaders(){ 
+        SceneManager.LoadSceneAsync("FurkanScene");
     }
 
+
 }
+

@@ -2061,17 +2061,25 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1151843791}
+    - target: {fileID: 1287921134352874405, guid: 00e2561469bb9f246983ae15e6207d92, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287921134352874405, guid: 00e2561469bb9f246983ae15e6207d92, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1876161479398182907, guid: 00e2561469bb9f246983ae15e6207d92, type: 3}
       propertyPath: m_Name
       value: Virtual Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5722244835741547918, guid: 00e2561469bb9f246983ae15e6207d92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.37
+      value: 127.6
       objectReference: {fileID: 0}
     - target: {fileID: 5722244835741547918, guid: 00e2561469bb9f246983ae15e6207d92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 5722244835741547918, guid: 00e2561469bb9f246983ae15e6207d92, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2824,9 +2832,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 4.2
   orthographic: 1
-  orthographic size: 4.2
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2851,7 +2859,7 @@ Transform:
   m_GameObject: {fileID: 732563363}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.37, y: -0.18, z: -10.76}
+  m_LocalPosition: {x: 127.6, y: 5.2, z: -10.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4484,6 +4492,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 587108201}
+--- !u!114 &1151843796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151843781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba823702c5da8946ba2989a9bdf905f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "durmaS\xFCresi": 1.5
 --- !u!1001 &1164387141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5276,9 +5297,10 @@ GameObject:
   - component: {fileID: 1283664089}
   - component: {fileID: 1283664088}
   - component: {fileID: 1283664091}
+  - component: {fileID: 1283664092}
   m_Layer: 0
   m_Name: EXIT
-  m_TagString: Untagged
+  m_TagString: cave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5467,6 +5489,78 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &1283664092
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283664087}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.086257726, y: 0.18291102}
+      - {x: 0.03, y: 0.19}
+      - {x: -0.07, y: 0.19}
+      - {x: -0.10952723, y: -0.01}
+      - {x: -0.0941757, y: -0.2107641}
+      - {x: -0.09682454, y: -0.27587488}
+      - {x: -0.08822024, y: -0.33755133}
+      - {x: 0.042698793, y: -0.3382618}
+      - {x: 0.10999609, y: -0.18139997}
+      - {x: 0.09158781, y: -0.018525498}
+      - {x: 0.09083206, y: 0.10774442}
+      - {x: 0.07329346, y: 0.13850693}
+    - - {x: -0.16, y: -0.099999994}
+      - {x: -0.13, y: -0.089999996}
+      - {x: -0.13, y: -0.06}
+      - {x: -0.16, y: -0.049999997}
+      - {x: -0.17999999, y: -0.07}
+    - - {x: -0.19999999, y: 0}
+      - {x: -0.17, y: 0.01}
+      - {x: -0.17, y: 0.04}
+      - {x: -0.19999999, y: 0.049999997}
+      - {x: -0.22, y: 0.03}
+    - - {x: -0.12, y: 0.14999999}
+      - {x: -0.089999996, y: 0.16}
+      - {x: -0.089999996, y: 0.19}
+      - {x: -0.12, y: 0.19999999}
+      - {x: -0.14, y: 0.17999999}
+  m_UseDelaunayMesh: 0
 --- !u!4 &1306203276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9208237067161734619, guid: 6d8ae1664f3e0f94fb603521fff02bcc, type: 3}
@@ -9005,11 +9099,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8542056978441973711, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.37
+      value: 127.6
       objectReference: {fileID: 0}
     - target: {fileID: 8542056978441973711, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 8542056978441973711, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9065,6 +9159,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3854007336810426040, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1151843795}
+    - targetCorrespondingSourceObject: {fileID: 3854007336810426040, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1151843796}
   m_SourcePrefab: {fileID: 100100000, guid: 1d37222b1cba1f74f87531d9f9d4b1dc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
