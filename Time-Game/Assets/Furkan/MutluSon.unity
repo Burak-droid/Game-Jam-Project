@@ -661,7 +661,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -311, y: -108}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 81.71, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270920937
 MonoBehaviour:
@@ -749,6 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf86abddba04c9449a7d34b13793afce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gecisSuresi: 7
 --- !u!1 &376064427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,8 +1198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0.274, y: -179.887, z: 0.837}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110.02185, y: -106.49756}
-  m_SizeDelta: {x: 100, y: 101.387}
+  m_AnchoredPosition: {x: 108.1, y: -114.75}
+  m_SizeDelta: {x: 60.1, y: 86.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513419895
 MonoBehaviour:

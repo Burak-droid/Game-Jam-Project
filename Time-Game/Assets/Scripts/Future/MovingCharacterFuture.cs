@@ -10,10 +10,6 @@ public class MovingCharacterFuture : MonoBehaviour
     public bool onfloor = true;
     Rigidbody2D rb;
     private float chScaleX, chScaleY, chScaleZ;
-
-    Transform firepoint;
-
-
     private Animator anim;
     void Start()
     {
@@ -22,7 +18,6 @@ public class MovingCharacterFuture : MonoBehaviour
         chScaleY = transform.localScale.y;
         chScaleZ = transform.localScale.z;
         anim = GetComponent<Animator>();
-        firepoint = transform.GetChild(0);
     }
 
    
@@ -36,8 +31,6 @@ public class MovingCharacterFuture : MonoBehaviour
     if (yatayHareket > 0)
     {
             transform.localScale = new Vector3(chScaleX, chScaleY, chScaleZ);
-
-            firepoint.localScale = new Vector2(yatayHareket,0f);
             anim.SetBool("running",true);
         
             
@@ -45,7 +38,6 @@ public class MovingCharacterFuture : MonoBehaviour
     else if (yatayHareket < 0)
     {
             transform.localScale = new Vector3(-chScaleX, chScaleY, chScaleZ);
-            firepoint.localScale = new Vector2(yatayHareket,-0f);
             anim.SetBool("running",true);
         
             
