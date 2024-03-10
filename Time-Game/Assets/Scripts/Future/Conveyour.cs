@@ -14,7 +14,6 @@ public class Conveyour : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player")){
             other.rigidbody.AddForce(speed);
-            Debug.Log("123");
         }
     }
 }
