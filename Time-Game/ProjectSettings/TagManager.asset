@@ -11,6 +11,7 @@ TagManager:
   - border
   - cave
   - banana
+  - DialogPanel
   layers:
   - Default
   - TransparentFX

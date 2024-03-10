@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class MovingCharacter : MonoBehaviour
@@ -10,11 +9,12 @@ public class MovingCharacter : MonoBehaviour
     public bool onfloor = true;
     Rigidbody2D rb;
     private float chScaleX, chScaleY, chScaleZ;
+    
 
     Transform firepoint;
 
-
     private Animator anim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,55 +25,63 @@ public class MovingCharacter : MonoBehaviour
         firepoint = transform.GetChild(0);
     }
 
-   
     void Update()
-{
-    float yatayHareket = Input.GetAxis("Horizontal");
-    float dikeyHareket = Input.GetAxis("Vertical");
-
-    Vector2 hareket = new Vector2(yatayHareket, 0f);
-    rb.velocity = new Vector2(hareket.x * movingSpeed, rb.velocity.y);
-    if (yatayHareket > 0)
     {
-            transform.localScale = new Vector3(chScaleX, chScaleY, chScaleZ);
+        float yatayHareket = Input.GetAxis("Horizontal");
+        float dikeyHareket = Input.GetAxis("Vertical");
 
-            firepoint.localScale = new Vector2(yatayHareket,0f);
-            anim.SetBool("running",true);
-        
-            
-    }
-    else if (yatayHareket < 0)
-    {
-            transform.localScale = new Vector3(-chScaleX, chScaleY, chScaleZ);
-            firepoint.localScale = new Vector2(yatayHareket,-0f);
-            anim.SetBool("running",true);
-        
-            
-    }
-    else { 
-            anim.SetBool("running",false);
+        Vector2 hareket = new Vector2(yatayHareket, 0f);
+        rb.velocity = new Vector2(hareket.x * movingSpeed, rb.velocity.y);
+
+        if (yatayHareket > 0)
+        {
+            Flip(false);
+            anim.SetBool("running", true);
         }
-    if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && onfloor)
-    {
-        rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-        onfloor = false;
-    }
-}
+        else if (yatayHareket < 0)
+        {
+            Flip(true);
+            anim.SetBool("running", true);
+        }
+        else
+        {
+            anim.SetBool("running", false);
+        }
 
-void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.CompareTag("Platform"))
-    {
-        onfloor = true;
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && onfloor)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            onfloor = false;
+        }
     }
-    
-     else if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && onfloor==true)
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-        onfloor = false;
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            onfloor = true;
+        }
+        else if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && onfloor == true)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            onfloor = false;
+        }
     }
-}
 
-
+    void Flip(bool facingLeft)
+    {
+        if (facingLeft)
+        {
+            transform.localScale = new Vector3(-chScaleX, chScaleY, chScaleZ);
+            firepoint.localScale = new Vector2(-1, 1); 
+            firepoint.localScale = new Vector3(-1, 1, 1); 
+        }
+        else
+        {
+            transform.localScale = new Vector3(chScaleX, chScaleY, chScaleZ);
+            firepoint.localScale = new Vector2(1, 1); 
+            firepoint.localScale = new Vector3(1, 1, 1); 
+        }
+    }
 
 }
