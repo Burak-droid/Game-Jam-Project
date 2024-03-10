@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/MainMenu/mainMenu.unity
+    guid: 6dcc8c4d373d29b4f995cb71ea1d25f7
+  - enabled: 1
+    path: Assets/Furkan/Furkandeneme.unity
+    guid: 721257ec6997d1940ae19a47caf83d5d
   m_configObjects: {}
