@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Monkeyhealth : MonoBehaviour
 {
-    private bool temasOldu = false;
-    private int canSayisi = 3;
 
+    private float canSayisi = 5;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("border"))
@@ -20,15 +19,14 @@ public class Monkeyhealth : MonoBehaviour
                     Invoke("YenidenYukle", 1f);
                 }
             }
-            else
+            else if(other.gameObject.CompareTag("Enemy"))
             {
-                temasOldu = true;
-                canSayisi--;
-                Debug.Log(canSayisi);
+                canSayisi= canSayisi- 0.5f;
+                Debug.Log(canSayisi+"  1");
                 if (canSayisi <= 0)
                 {
                     Invoke("YenidenYukle", 1f);
-                    canSayisi = 3;
+                    canSayisi = 5;
                 }
             }
         }
@@ -37,7 +35,8 @@ public class Monkeyhealth : MonoBehaviour
     private void YenidenYukle()
     {
         int sahneIndeksi = SceneManager.GetActiveScene().buildIndex;
-        canSayisi = 3;
+        canSayisi = 5;
+        Debug.Log(canSayisi + "  2");
         SceneManager.LoadScene(sahneIndeksi);
 
     }

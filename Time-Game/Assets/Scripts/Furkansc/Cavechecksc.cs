@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cavechecksc : MonoBehaviour
 {
-    public float durmaSüresi = 0.75f;
+    public float durmaSüresi = 1.5f;
 
     
     void OnTriggerEnter2D(Collider2D other)
