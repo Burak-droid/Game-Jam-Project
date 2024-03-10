@@ -62,7 +62,7 @@ public class MovingCharacterFuture : MonoBehaviour
 
 void OnCollisionEnter2D(Collision2D collision)
 {
-    if (collision.gameObject.CompareTag("Platform"))
+    if (collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Moving Platform"))
     {
         onfloor = true;
     }
